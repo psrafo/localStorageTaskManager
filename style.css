@@ -83,7 +83,7 @@ body, body * {font-family: "PT Sans", Helvetica, Arial, sans-serif;}
 	line-height: 30px;
 }
 .item__tpl1__left {
-	width: 80%;
+	width: 90%;
 	background-color: rgba(27, 112, 224, 0.70);
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
 	border-radius: 5px 0 0 5px;
@@ -96,8 +96,8 @@ body, body * {font-family: "PT Sans", Helvetica, Arial, sans-serif;}
 }
 
 
-.item__tpl1__right .btn__tpl1 {padding: 5px 10px; margin-top: -5px;}
-.item__tpl1__right {width: 20%;}
+.item__tpl1__right .btn__tpl1 {padding: 5px 10px; margin-top: -5px; text-align: center;}
+.item__tpl1__right {width: 10%;}
 
 
 #edit_area, #add_area {
