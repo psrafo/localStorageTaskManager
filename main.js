@@ -33,9 +33,9 @@ $(document).ready(function() {
 		if(this.innerHTML == this.getAttribute("rel"))
 		{
 			io = document.getElementById("imp_ext__io");
-			if(io.innerHTML.trim() != "")
+			if(io.value.trim() != "")
 			{
-				obj = JSON.parse(io.innerHTML);
+				obj = JSON.parse(io.value);
 				normalizeObj();
 				updateList();
 			}
@@ -61,12 +61,12 @@ $(document).ready(function() {
 			if(this.id == "btn_export")
 			{
 				document.getElementById("btn_executeImport").style.display = "none";
-				document.getElementById("imp_ext__io").innerHTML = JSON.stringify(obj);
+				document.getElementById("imp_ext__io").value = JSON.stringify(obj);
 			}
 			else if(this.id == "btn_import")
 			{
 				document.getElementById("btn_executeImport").style.display = "block";
-				document.getElementById("imp_ext__io").innerHTML = "";
+				document.getElementById("imp_ext__io").value = "";
 			}
 		}
 		else
