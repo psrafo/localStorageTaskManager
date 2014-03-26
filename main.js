@@ -28,6 +28,55 @@ $(document).ready(function() {
 		}
 	});
 	
+	
+	$("#btn_executeImport").click(function() {
+		if(this.innerHTML == this.getAttribute("rel"))
+		{
+			io = document.getElementById("imp_ext__io");
+			if(io.innerHTML.trim() != "")
+			{
+				obj = JSON.parse(io.innerHTML);
+				normalizeObj();
+				updateList();
+			}
+			else
+			{
+				this.innerHTML = "Invalid json data";
+				this.classList.add("btn__tpl1__red");
+				setTimeout(function() {
+					document.getElementById("btn_executeImport").innerHTML = document.getElementById("btn_executeImport").getAttribute("rel");
+					document.getElementById("btn_executeImport").classList.remove("btn__tpl1__red");
+				}, 2000);
+			}
+		}
+	});
+	
+	$("#imp_exp_area .btn__tpl2").click(function() {
+		if(!this.classList.contains("selected"))
+		{
+			$("#imp_exp_area .btn__tpl2").removeClass("selected");
+			this.classList.add("selected");
+			
+			document.getElementById("imp_ext__io").style.display = "block";
+			if(this.id == "btn_export")
+			{
+				document.getElementById("btn_executeImport").style.display = "none";
+				document.getElementById("imp_ext__io").innerHTML = JSON.stringify(obj);
+			}
+			else if(this.id == "btn_import")
+			{
+				document.getElementById("btn_executeImport").style.display = "block";
+				document.getElementById("imp_ext__io").innerHTML = "";
+			}
+		}
+		else
+		{
+			this.classList.remove("selected");
+			document.getElementById("imp_ext__io").style.display = "none";
+			document.getElementById("btn_executeImport").style.display = "none";
+		}
+	});
+	
 	$("#remove_all_btn").click(function() {
 		if(this.innerHTML == this.getAttribute("rel"))
 		{

@@ -37,6 +37,36 @@ body, body * {font-family: "PT Sans", Helvetica, Arial, sans-serif;}
 	box-shadow: 0 0 0 1px rgba(224, 27, 27, 0.2), 0 1px 2px rgba(224, 27, 27, 0.2), inset 0 1px 2px rgba(224, 27, 27, 0.8);
 }
 
+
+.btn__tpl2.selected {color: #555;}
+.btn__tpl2:hover, .btn__tpl2.selected {background-color: #eee;}
+.btn__tpl2 {
+	color: #1b70e0;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+#imp_ext__io {
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	outline-color: blue;
+	border: 1px solid #bbb;
+	display: none;
+}
+
+
+#imp_exp_area {
+	float: right;
+}
+
+#imp_exp_area .btn__tpl2 {float: left; margin-left: 10px;}
+#btn_executeImport {float: left; margin-top: 5px; display: none;}
+
+
 .container {
 	margin: 30px 150px 15px 150px;
 }
