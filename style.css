@@ -10,7 +10,7 @@ body, body * {font-family: "PT Sans", Helvetica, Arial, sans-serif;}
 .clearfix {clear: both;}
 
 
-.sortable-ghost .item__tpl1__left {background-color: #999;}
+.sortable-ghost .item__tpl1__left {background-color: #999 !important;}
 
 
 .btn__tpl1:hover {background-color: #fff;}
