@@ -57,17 +57,6 @@ $(document).ready(function() {
 			title.classList.remove("red");
 		}
 		
-		if(text.value == "")
-		{
-			text.classList.add("red");
-			$(text).focus();
-			return false;
-		}
-		else
-		{
-			text.classList.remove("red");
-		}
-		
 		addToList(title.value, text.value);
 		
 		title.value = "";
@@ -76,7 +65,22 @@ $(document).ready(function() {
 	
 	$("#edit_btn").click(function() {
 		item_id = parseInt(document.getElementById("edit_area").getAttribute("rel"));
-		editItem(item_id);
+		
+		title = document.getElementById("edit_area__title");
+		text = document.getElementById("edit_area__text");
+		
+		if(title.value == "")
+		{
+			title.classList.add("red");
+			$(title).focus();
+			return false;
+		}
+		else
+		{
+			title.classList.remove("red");
+		}
+		
+		editItem(item_id, title.value, text.value);
 	});
 	
 	$("#remove_btn").click(function() {
@@ -173,10 +177,10 @@ function prepareToEdit(item_id)
 	document.getElementById("edit_area__text").value = obj.list[item_id].text;
 }
 
-function editItem(item_id)
+function editItem(item_id, title, text)
 {
-	obj.list[item_id].title = document.getElementById("edit_area__title").value;
-	obj.list[item_id].text = document.getElementById("edit_area__text").value;
+	obj.list[item_id].title = title;
+	obj.list[item_id].text = text;
 	normalizeObj();
 	updateList();
 	resetEditForm();
