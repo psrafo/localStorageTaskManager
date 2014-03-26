@@ -1,2 +1,2 @@
-taskReminder
+localStorage Task Manager
 ============
