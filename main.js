@@ -29,6 +29,8 @@ $(document).ready(function() {
 		}
 	});
 	
+	$("#remove_all_btn").click(destroyList);
+	
 	$("#add_area__show_btn").click(function() {
 		e = $("#add_area");
 		if($(e).css("display") == "none")
@@ -209,4 +211,13 @@ function getSolving(elem)
 function normalizeObj()
 {
 	localStorage.setItem("projects", JSON.stringify(obj));
+}
+
+function destroyList()
+{
+	localStorage.removeItem("projects");
+	obj = new Object;
+	obj.list = new Object;
+	normalizeObj();
+	updateList();
 }
