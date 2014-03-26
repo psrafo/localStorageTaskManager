@@ -2,7 +2,6 @@ var obj = new Object;
 	obj.list = new Object;
 
 $(document).ready(function() {
-	
 	init();
 	
 	sortableList = document.getElementById("main_list");
@@ -56,8 +55,8 @@ $(document).ready(function() {
 	});
 	
 	$("#add_area__show_btn").click(function() {
-		e = $("#add_area");
-		if($(e).css("display") == "none")
+		e = document.getElementById("add_area");
+		if(e.style.display == "" || e.style.display == "none")
 		{
 			this.children[0].innerHTML = "-";
 			$(e).slideDown(150);
@@ -145,7 +144,8 @@ function removeFromList(item_id)
 	delete obj.list[item_id];
 	normalizeObj();
 	
-	$(".item__tpl1[rel="+item_id+"]").slideUp(500);
+	$(".item__tpl1[rel=" + item_id + "]").slideUp(500);
+	
 	resetEditForm();
 	setTimeout(updateList, 500);
 }
