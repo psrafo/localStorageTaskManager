@@ -38,7 +38,7 @@ body, body * {font-family: "PT Sans", Helvetica, Arial, sans-serif;}
 }
 
 .container {
-	margin: 15px 150px;
+	margin: 30px 150px 15px 150px;
 }
 .item__tpl1.red .item__tpl1__left {background-color: rgba(224, 27, 27, 0.7);}
 
