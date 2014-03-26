@@ -29,7 +29,31 @@ $(document).ready(function() {
 		}
 	});
 	
-	$("#remove_all_btn").click(destroyList);
+	$("#remove_all_btn").click(function() {
+		if(this.innerHTML == this.getAttribute("rel"))
+		{
+			size = Object.keys(obj.list).length;
+			if(size > 0)
+			{
+				if(confirm("Are you ready to remove all items from task list ?"))
+				{
+					destroyList();
+					
+					this.innerHTML = "Your tasks removed.";
+					setTimeout(function() {
+						document.getElementById("remove_all_btn").innerHTML = document.getElementById("remove_all_btn").getAttribute("rel");
+					}, 2000);
+				}
+			}
+			else
+			{
+				this.innerHTML = "You have not tasks.";
+				setTimeout(function() {
+					document.getElementById("remove_all_btn").innerHTML = document.getElementById("remove_all_btn").getAttribute("rel");
+				}, 2000);
+			}
+		}
+	});
 	
 	$("#add_area__show_btn").click(function() {
 		e = $("#add_area");
