@@ -146,6 +146,7 @@ function updateList()
 				classes = "";
 				if(arr[n].isRed != null)
 					classes = "red";
+				
 				str = ""+
 					"<div class='item__tpl1 " + classes + "' rel='" + n + "' num='" + arr[n].num + "'>" +
 						"<div class='item__tpl1__left' onclick='getSolving(this);'>" +
@@ -164,7 +165,6 @@ function updateList()
 	}
 	
 	$("#main_list .item__tpl1").sort(function (a, b) {
-		console.log(5);
 		return +a.getAttribute("num") - +b.getAttribute("num");
 	}).appendTo("#main_list");	
 }
@@ -181,6 +181,7 @@ function editItem(item_id, title, text)
 {
 	obj.list[item_id].title = title;
 	obj.list[item_id].text = text;
+	
 	normalizeObj();
 	updateList();
 	resetEditForm();
