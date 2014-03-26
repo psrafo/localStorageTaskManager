@@ -5,7 +5,7 @@ $(document).ready(function() {
 	
 	init();
 	
-	sortableList = document.getElementsByClassName("main_list")[0];
+	sortableList = document.getElementById("main_list");
 	var p = new Sortable(sortableList, {
 		handle: ".item__tpl1__left",
 		draggable: ".item__tpl1",
@@ -134,7 +134,7 @@ function resetEditForm()
 
 function updateList()
 {
-	$(".main_list").html("");
+	document.getElementById("main_list").innerHTML = "";
 	arr = obj.list;
 	size = Object.keys(obj.list).length;
 	for(n in arr)
@@ -158,15 +158,15 @@ function updateList()
 					"</div>" +
 				"";
 				
-				$(".main_list").html( $(".main_list").html() + str );
+				document.getElementById("main_list").innerHTML = document.getElementById("main_list").innerHTML + str
 			}
 		}
 	}
 	
-	$(".main_list .item__tpl1").sort(function (a, b) {
+	$("#main_list .item__tpl1").sort(function (a, b) {
 		console.log(5);
 		return +a.getAttribute("num") - +b.getAttribute("num");
-	}).appendTo(".main_list");	
+	}).appendTo("#main_list");	
 }
 
 function prepareToEdit(item_id)

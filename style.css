@@ -37,7 +37,7 @@ body, body * {font-family: "PT Sans", Helvetica, Arial, sans-serif;}
 	box-shadow: 0 0 0 1px rgba(224, 27, 27, 0.2), 0 1px 2px rgba(224, 27, 27, 0.2), inset 0 1px 2px rgba(224, 27, 27, 0.8);
 }
 
-.main_list {margin: 15px;}
+#main_list {margin: 15px;}
 .item__tpl1.red .item__tpl1__left {background-color: rgba(224, 27, 27, 0.7);}
 
 .item__tpl1 {
