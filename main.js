@@ -289,6 +289,7 @@ function normalizeObj()
 function destroyList()
 {
 	localStorage.removeItem("projects");
+	
 	obj = new Object;
 	obj.list = new Object;
 	normalizeObj();
