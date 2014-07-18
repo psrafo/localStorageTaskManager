@@ -121,6 +121,15 @@ function getSolving(elem)
 function normalizeObj()
 {
 	localStorage.setItem("projects", JSON.stringify(obj));
+	
+	if(Object.keys(obj.list).length > 0)
+	{
+		document.getElementById("btn_export").style.display = "block";
+	}
+	else
+	{
+		document.getElementById("btn_export").style.display = "none";
+	}
 }
 
 function destroyList()
